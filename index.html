@@ -19,6 +19,71 @@
   --gray2:#3a3a48;
   --border:#1e1e28;
 }
+  <script>
+
+var sessionId = Math.random().toString(36).substring(7);
+
+var botReplying = false;
+
+var greeted = false;
+
+window.addEventListener('load', function() {
+
+  Tawk_API = Tawk_API || {};
+
+  Tawk_API.onChatStarted = async function() {
+
+    if (greeted) return;
+
+    greeted = true;
+
+    setTimeout(async function() {
+
+      const r = await fetch(
+
+        'https://zuperior-bot.onrender.com/chat',
+
+        {method:'POST',headers:{'Content-Type':'application/json'},
+
+        body:JSON.stringify({message:'__GREET__',sessionId:sessionId})}
+
+      );
+
+      const d = await r.json();
+
+      Tawk_API.sendMessage({message:d.reply});
+
+    },1000);
+
+  };
+
+  Tawk_API.onChatMessageVisitor = async function(msg) {
+
+    if(botReplying)return;
+
+    botReplying=true;
+
+    const r = await fetch(
+
+      'https://zuperior-bot.onrender.com/chat',
+
+      {method:'POST',headers:{'Content-Type':'application/json'},
+
+      body:JSON.stringify({message:msg.message,sessionId:sessionId})}
+
+    );
+
+    const d = await r.json();
+
+    Tawk_API.sendMessage({message:d.reply});
+
+    setTimeout(function(){botReplying=false;},2000);
+
+  };
+
+});
+
+</script>
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1.6}
 ::-webkit-scrollbar{width:4px}
