@@ -738,37 +738,77 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/690bc64ce10d0719502af37f/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
 <!--Zuperior Bot Script-->
 <script>
 var sessionId = Math.random().toString(36).substring(7);
 var botReplying = false;
 var greeted = false;
+
 window.addEventListener('load', function() {
   Tawk_API = Tawk_API || {};
+
   Tawk_API.onChatStarted = async function() {
     if (greeted) return;
     greeted = true;
     setTimeout(async function() {
+      try {
+        const r = await fetch(
+          'https://zuperior-bot.onrender.com/chat',
+          {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              message: '__GREET__',
+              sessionId: sessionId
+            })
+          }
+        );
+        const d = await r.json();
+        Tawk_API.sendMessage({message: d.reply});
+      } catch(e) {
+        console.log('Greeting error:', e);
+      }
+    }, 1000);
+  };
+
+  Tawk_API.onChatMessageVisitor = async function(msg) {
+    if (botReplying) return;
+    botReplying = true;
+    try {
       const r = await fetch(
         'https://zuperior-bot.onrender.com/chat',
-        {method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({message:'__GREET__',sessionId:sessionId})}
+        {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            message: msg.message,
+            sessionId: sessionId
+          })
+        }
       );
       const d = await r.json();
-      Tawk_API.sendMessage({message:d.reply});
-    },1000);
-  };
-  Tawk_API.onChatMessageVisitor = async function(msg) {
-    if(botReplying)return;
-    botReplying=true;
-    const r = await fetch(
-      'https://zuperior-bot.onrender.com/chat',
-      {method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({message:msg.message,sessionId:sessionId})}
-    );
-    const d = await r.json();
-    Tawk_API.sendMessage({message:d.reply});
-    setTimeout(function(){botReplying=false;},2000);
+      Tawk_API.sendMessage({message: d.reply});
+    } catch(e) {
+      console.log('Message error:', e);
+      Tawk_API.sendMessage({
+        message: "Sorry! Please email support@zuperior.com"
+      });
+    }
+    setTimeout(function() { botReplying = false; }, 2000);
   };
 });
 </script>
