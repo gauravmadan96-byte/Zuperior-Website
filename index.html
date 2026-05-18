@@ -9,54 +9,27 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#08080a;
-  --bg2:#0f0f12;
-  --bg3:#141418;
-  --gold:#d4a843;
-  --gold2:#f0c060;
-  --white:#ffffff;
-  --gray:#8a8a9a;
-  --gray2:#3a3a48;
-  --border:#1e1e28;
+  --bg:#08080a;--bg2:#0f0f12;--bg3:#141418;
+  --gold:#d4a843;--gold2:#f0c060;--white:#ffffff;
+  --gray:#8a8a9a;--gray2:#3a3a48;--border:#1e1e28;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1.6}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
-
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 5vw;height:68px;
-  background:rgba(8,8,10,0.88);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:68px;background:rgba(8,8,10,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-logo{font-size:1.35rem;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-0.02em}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none}
 .nav-links a{color:var(--gray);text-decoration:none;font-size:.875rem;font-weight:400;transition:color .2s}
 .nav-links a:hover{color:var(--white)}
-.nav-cta{background:var(--gold) !important;color:#000 !important;padding:.45rem 1.2rem;border-radius:999px;font-weight:600 !important;transition:background .2s !important}
-.nav-cta:hover{background:var(--gold2) !important;color:#000 !important}
+.nav-cta{background:var(--gold)!important;color:#000!important;padding:.45rem 1.2rem;border-radius:999px;font-weight:600!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--gold2)!important;color:#000!important}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:.3s}
-
-/* HERO */
-.hero{
-  min-height:100vh;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;text-align:center;
-  padding:8rem 5vw 5rem;position:relative;overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 80% 55% at 50% 0%,rgba(212,168,67,.09) 0%,transparent 70%),
-    radial-gradient(ellipse 50% 35% at 15% 85%,rgba(212,168,67,.04) 0%,transparent 60%),
-    radial-gradient(ellipse 40% 30% at 85% 80%,rgba(212,168,67,.03) 0%,transparent 60%);
-}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 5vw 5rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(212,168,67,.09) 0%,transparent 70%),radial-gradient(ellipse 50% 35% at 15% 85%,rgba(212,168,67,.04) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 85% 80%,rgba(212,168,67,.03) 0%,transparent 60%)}
 .line-left{position:absolute;left:22%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent 0%,rgba(212,168,67,.12) 40%,rgba(212,168,67,.12) 60%,transparent 100%);pointer-events:none}
 .line-right{position:absolute;right:22%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent 0%,rgba(212,168,67,.08) 40%,rgba(212,168,67,.08) 60%,transparent 100%);pointer-events:none}
 .hero-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;animation:fadeUp .6s ease both}
@@ -68,16 +41,12 @@ nav{
 .btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--white);border:1px solid var(--gray2);padding:.85rem 2rem;border-radius:999px;font-size:.95rem;font-weight:400;font-family:'Inter',sans-serif;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s,transform .15s}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-
-/* SECTION HELPERS */
 .sec{padding:6rem 5vw}
 .sec-alt{padding:6rem 5vw;background:var(--bg2)}
 .sec-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
 .sec-title{font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:.6rem}
 .sec-sub{color:var(--gray);font-size:.9rem;font-weight:300;line-height:1.7}
-
-/* ACCOUNTS TABLE */
-.accounts-table-wrap{overflow-x:auto;margin-top:2.5rem}
+.accounts-table-wrap{overflow-x:auto;margin-top:2.5rem;-webkit-overflow-scrolling:touch}
 .accounts-table{width:100%;border-collapse:collapse;min-width:620px}
 .accounts-table th{font-size:.72rem;font-weight:500;color:var(--gray);letter-spacing:.05em;text-transform:uppercase;padding:.9rem 1.25rem;text-align:left;border-bottom:1px solid var(--border)}
 .accounts-table td{padding:1rem 1.25rem;font-size:.875rem;border-bottom:1px solid var(--border);color:var(--gray)}
@@ -90,9 +59,7 @@ nav{
 .badge-rec{background:var(--gold);color:#000;padding:.18rem .6rem;border-radius:999px;font-size:.68rem;font-weight:700}
 .badge-free{background:rgba(212,168,67,.1);color:var(--gold);padding:.2rem .6rem;border-radius:999px;font-size:.72rem;font-weight:600}
 .chk{color:var(--gold)}
-
-/* PORTAL */
-.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:0}
+.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .portal-text h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem}
 .portal-text h2 span{color:var(--gold)}
 .portal-text p{color:var(--gray);font-weight:300;line-height:1.75;margin-bottom:2rem}
@@ -108,16 +75,12 @@ nav{
 .mstat .ml{font-size:.68rem;color:var(--gray);margin-bottom:.2rem}
 .mstat .mv{font-size:1.05rem;font-weight:600;color:var(--gold)}
 .mv.green{color:#4caf82}
-
-/* FEATURES */
 .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:2.5rem}
 .feat-card{background:var(--bg2);padding:2.25rem 2rem;transition:background .2s}
 .feat-card:hover{background:var(--bg3)}
 .feat-icon{font-size:1.5rem;width:48px;height:48px;background:rgba(212,168,67,.07);border:1px solid rgba(212,168,67,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
 .feat-card h3{font-size:.95rem;font-weight:600;margin-bottom:.45rem}
 .feat-card p{font-size:.83rem;color:var(--gray);line-height:1.65;font-weight:300}
-
-/* BEHAVIOUR */
 .behav-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
 .behav-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:2.5rem 2.25rem;position:relative;overflow:hidden}
 .behav-card::after{content:'';position:absolute;top:0;right:0;width:180px;height:180px;background:radial-gradient(circle,rgba(212,168,67,.05) 0%,transparent 70%);pointer-events:none}
@@ -129,22 +92,16 @@ nav{
 .kill-list li .x{width:22px;height:22px;border-radius:50%;background:rgba(212,168,67,.1);color:var(--gold);font-size:.7rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
 .pool-box{background:rgba(212,168,67,.07);border:1px solid rgba(212,168,67,.18);border-radius:12px;padding:1rem 1.25rem;margin-top:1.25rem}
 .pool-box p{font-size:.83rem;color:var(--gray);font-weight:300;line-height:1.65;margin:0}
-
-/* WHY */
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .why-card{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:2.25rem 2rem;transition:border-color .25s,transform .2s}
 .why-card:hover{border-color:var(--gold);transform:translateY(-4px)}
 .why-star{color:var(--gold);font-size:1.3rem;margin-bottom:.9rem}
 .why-card h3{font-size:1rem;font-weight:600;margin-bottom:.45rem}
 .why-card p{font-size:.83rem;color:var(--gray);line-height:1.65;font-weight:300}
-
-/* TRADERS */
 .chips{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}
 .chip{background:var(--bg2);border:1px solid var(--border);border-radius:999px;padding:.6rem 1.4rem;font-size:.85rem;color:var(--gray);display:flex;align-items:center;gap:.5rem;transition:border-color .2s,color .2s;cursor:default}
 .chip:hover{border-color:var(--gold);color:var(--white)}
 .chip::before{content:'★';color:var(--gold);font-size:.7rem}
-
-/* TOOLS */
 .tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
 .tool-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1.75rem;display:flex;flex-direction:column;gap:.6rem;transition:border-color .2s;text-decoration:none;color:inherit}
 .tool-card:hover{border-color:var(--gold)}
@@ -152,22 +109,16 @@ nav{
 .tool-card h3{font-size:.95rem;font-weight:600}
 .tool-card p{font-size:.83rem;color:var(--gray);font-weight:300;line-height:1.6}
 .tool-link{font-size:.78rem;color:var(--gold);font-weight:500;margin-top:auto}
-
-/* PLATFORMS */
 .platform-logos{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;margin:2.5rem 0 2rem}
 .plat-chip{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.1rem 2.25rem;display:flex;align-items:center;gap:.9rem;font-size:.95rem;font-weight:600;transition:border-color .2s}
 .plat-chip:hover{border-color:var(--gold)}
 .plat-chip .pico{font-size:1.6rem}
-
-/* STEPS */
 .steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;position:relative}
 .steps-row::before{content:'';position:absolute;top:1.8rem;left:calc(33.3% - 1rem);right:calc(33.3% - 1rem);height:1px;background:var(--border)}
 .step-card{position:relative;z-index:1}
 .step-num{font-size:3.5rem;font-weight:700;color:rgba(212,168,67,.1);line-height:1;margin-bottom:.75rem}
 .step-card h3{font-size:.95rem;font-weight:600;margin-bottom:.4rem}
 .step-card p{font-size:.83rem;color:var(--gray);line-height:1.65;font-weight:300}
-
-/* VAULT */
 .vault-section{padding:6rem 5vw;text-align:center;position:relative;overflow:hidden}
 .vault-glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,67,.05) 0%,transparent 70%);left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
 .market-cats{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin:1.5rem 0 2rem}
@@ -178,8 +129,6 @@ nav{
 .tick .pr{font-size:.78rem;color:var(--gray)}
 .tick .ch{font-size:.72rem;font-weight:600}
 .up{color:#4caf82}.dn{color:#e05252}
-
-/* APP */
 .app-section{padding:6rem 5vw;background:var(--bg2);text-align:center}
 .app-section h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.03em;margin-bottom:.75rem}
 .app-section h2 span{color:var(--gold)}
@@ -189,16 +138,12 @@ nav{
 .abadge:hover{border-color:var(--gold)}
 .abadge .abi{font-size:1.4rem}
 .abadge .abl{font-size:.6rem;color:var(--gray)}
-
-/* SOCIAL */
 .social-section{padding:5rem 5vw;text-align:center}
 .social-section h2{font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:700;letter-spacing:-.03em;margin-bottom:.5rem}
 .social-section p{color:var(--gray);font-weight:300;margin-bottom:2rem}
 .soc-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .soc-link{background:var(--bg2);border:1px solid var(--border);border-radius:999px;padding:.6rem 1.5rem;color:var(--gray);text-decoration:none;font-size:.875rem;display:flex;align-items:center;gap:.5rem;transition:border-color .2s,color .2s}
 .soc-link:hover{border-color:var(--gold);color:var(--gold)}
-
-/* FAQ */
 .faq-list{max-width:720px;margin:2.5rem auto 0;display:flex;flex-direction:column;gap:.65rem}
 .faq-item{background:var(--bg3);border:1px solid var(--border);border-radius:14px;overflow:hidden}
 .faq-q{width:100%;text-align:left;background:none;border:none;color:var(--white);font-family:'Inter',sans-serif;font-size:.9rem;font-weight:500;padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
@@ -206,8 +151,6 @@ nav{
 .faq-item.open .faq-q .arr{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;padding:0 1.5rem;color:var(--gray);font-size:.85rem;line-height:1.75;font-weight:300}
 .faq-item.open .faq-a{max-height:200px;padding:0 1.5rem 1.25rem}
-
-/* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 2rem}
 .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1.6fr;gap:2.5rem;margin-bottom:3rem}
 .foot-brand .flogo{font-size:1.25rem;font-weight:700;color:var(--white);text-decoration:none;display:block;margin-bottom:.9rem}
@@ -227,9 +170,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
 .foot-links-row a{font-size:.72rem;color:#45455a;text-decoration:none;transition:color .2s}
 .foot-links-row a:hover{color:var(--gold)}
 .foot-copy{font-size:.72rem;color:#35354a}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
+/* ═══════════════════════════════════
+   RESPONSIVE — TABLET (960px)
+═══════════════════════════════════ */
 @media(max-width:960px){
   .nav-links{display:none;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(8,8,10,.97);padding:1.5rem 5vw;gap:1.1rem;border-bottom:1px solid var(--border)}
   .nav-links.open{display:flex}
@@ -237,15 +182,94 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   .portal-grid{grid-template-columns:1fr}
   .behav-grid{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr 1fr}
-  .steps-row{grid-template-columns:1fr}
+  .steps-row{grid-template-columns:1fr;gap:1.5rem}
   .steps-row::before{display:none}
   .tools-grid{grid-template-columns:1fr}
   .foot-top{grid-template-columns:1fr 1fr}
 }
-@media(max-width:600px){
+
+/* ═══════════════════════════════════
+   RESPONSIVE — MOBILE (768px)
+═══════════════════════════════════ */
+@media(max-width:768px){
+  .sec,.sec-alt{padding:4rem 5vw}
+  .vault-section{padding:4rem 5vw}
+  .hero{padding:6rem 5vw 4rem}
+  .hero h1{font-size:2.8rem}
+  .hero-sub{font-size:.9rem}
+  .hero-btns{flex-direction:column;align-items:center;width:100%}
+  .btn-gold,.btn-outline{width:100%;max-width:300px;text-align:center}
+  .portal-img-wrap{display:none}
+  .feat-grid{grid-template-columns:1fr 1fr}
   .why-grid{grid-template-columns:1fr}
+  .app-badges{flex-direction:column;align-items:center}
+  .abadge{width:100%;max-width:260px;justify-content:center}
+  .soc-links{flex-direction:column;align-items:center}
+  .soc-link{width:100%;max-width:260px;justify-content:center}
   .foot-top{grid-template-columns:1fr}
-  .hero h1{font-size:3rem}
+  .platform-logos{flex-direction:column;align-items:center}
+  .plat-chip{width:100%;max-width:300px;justify-content:center}
+  .behav-card{padding:1.75rem 1.5rem}
+  .ticker-row{gap:.5rem}
+  .tick{padding:.5rem .9rem}
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — SMALL MOBILE (480px)
+═══════════════════════════════════ */
+@media(max-width:480px){
+  nav{height:60px;padding:0 4vw}
+  .nav-logo{font-size:1.1rem}
+  .nav-links{top:60px}
+  .hero{padding:5rem 5vw 3rem}
+  .hero h1{font-size:2rem;letter-spacing:-.02em}
+  .hero-sub{font-size:.85rem}
+  .hero-eyebrow{font-size:.65rem}
+  .sec,.sec-alt{padding:3rem 5vw}
+  .vault-section{padding:3rem 5vw}
+  .sec-title{font-size:1.55rem}
+  .feat-grid{grid-template-columns:1fr}
+  .feat-card{padding:1.5rem}
+  .why-card{padding:1.5rem}
+  .behav-card{padding:1.5rem}
+  .behav-card h3{font-size:1.1rem}
+  .step-num{font-size:2.5rem}
+  .chips{gap:.5rem}
+  .chip{font-size:.75rem;padding:.45rem .9rem}
+  .tool-card{padding:1.25rem}
+  .market-cats{gap:.5rem}
+  .mcat{font-size:.75rem;padding:.3rem .9rem}
+  .app-section h2{font-size:1.7rem}
+  .social-section h2{font-size:1.5rem}
+  .faq-q{font-size:.83rem;padding:1rem 1rem}
+  .faq-a{padding:0 1rem;font-size:.8rem}
+  .faq-item.open .faq-a{padding:0 1rem 1rem}
+  footer{padding:3rem 5vw 6rem}
+  .foot-bottom>div{flex-direction:column;align-items:flex-start;gap:.75rem}
+  .foot-links-row{gap:.75rem}
+  /* Extra bottom padding for chat widgets on mobile */
+  footer{padding-bottom:90px}
+}
+
+/* ═══════════════════════════════════
+   CHAT WIDGET MOBILE POSITIONING
+   Prevents widgets overlapping footer
+═══════════════════════════════════ */
+@media(max-width:768px){
+  /* Botpress — position higher on mobile */
+  #bp-web-widget-container{
+    bottom:75px!important;
+    right:14px!important;
+  }
+  /* When Botpress chat is open — full screen on mobile */
+  #bp-web-widget-container iframe[style*="height"]{
+    height:85vh!important;
+    width:100vw!important;
+    max-width:100vw!important;
+    right:0!important;
+    bottom:0!important;
+    border-radius:16px 16px 0 0!important;
+  }
 }
 </style>
 </head>
@@ -292,47 +316,24 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
     <table class="accounts-table">
       <thead>
         <tr>
-          <th>Account</th>
-          <th>Initial Capital</th>
-          <th>Spread Advantage</th>
-          <th>Trading Fees</th>
-          <th>Leverage</th>
-          <th>Min Lot</th>
-          <th>Neg. Balance</th>
-          <th>Execution</th>
-          <th>Swap Policy</th>
-          <th></th>
+          <th>Account</th><th>Initial Capital</th><th>Spread Advantage</th>
+          <th>Trading Fees</th><th>Leverage</th><th>Min Lot</th>
+          <th>Neg. Balance</th><th>Execution</th><th>Swap Policy</th><th></th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><div class="acct-name"><div class="acct-icon">⭐</div><span>Startup</span></div></td>
-          <td>$10</td>
-          <td>from 1.0 pips</td>
-          <td>Zero Commission</td>
-          <td>1:2000</td>
-          <td>0.01</td>
-          <td><span class="chk">✓</span> Yes</td>
-          <td>STP</td>
-          <td><span class="badge-free">Free</span></td>
+          <td>$10</td><td>from 1.0 pips</td><td>Zero Commission</td>
+          <td>1:2000</td><td>0.01</td><td><span class="chk">✓</span> Yes</td>
+          <td>STP</td><td><span class="badge-free">Free</span></td>
           <td><a href="#" class="dep-btn">Deposit Now</a></td>
         </tr>
         <tr>
-          <td>
-            <div class="acct-name">
-              <div class="acct-icon">🏆</div>
-              <span>Professional</span>
-              <span class="badge-rec">Recommended</span>
-            </div>
-          </td>
-          <td>$1,000</td>
-          <td>from 0.8 pips</td>
-          <td>Zero Commission</td>
-          <td>1:2000</td>
-          <td>0.01</td>
-          <td><span class="chk">✓</span> Yes</td>
-          <td>STP</td>
-          <td><span class="badge-free">Free</span></td>
+          <td><div class="acct-name"><div class="acct-icon">🏆</div><span>Professional</span><span class="badge-rec">Recommended</span></div></td>
+          <td>$1,000</td><td>from 0.8 pips</td><td>Zero Commission</td>
+          <td>1:2000</td><td>0.01</td><td><span class="chk">✓</span> Yes</td>
+          <td>STP</td><td><span class="badge-free">Free</span></td>
           <td><a href="#" class="dep-btn">Deposit Now</a></td>
         </tr>
       </tbody>
@@ -356,16 +357,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
           <span class="mock-label">Zuperior Web Terminal</span>
         </div>
         <div class="chart-bars">
-          <div class="cbar" style="height:55%"></div>
-          <div class="cbar" style="height:75%"></div>
-          <div class="cbar" style="height:45%"></div>
-          <div class="cbar" style="height:90%"></div>
-          <div class="cbar" style="height:65%"></div>
-          <div class="cbar" style="height:100%"></div>
-          <div class="cbar" style="height:60%"></div>
-          <div class="cbar" style="height:80%"></div>
-          <div class="cbar" style="height:70%"></div>
-          <div class="cbar" style="height:50%"></div>
+          <div class="cbar" style="height:55%"></div><div class="cbar" style="height:75%"></div>
+          <div class="cbar" style="height:45%"></div><div class="cbar" style="height:90%"></div>
+          <div class="cbar" style="height:65%"></div><div class="cbar" style="height:100%"></div>
+          <div class="cbar" style="height:60%"></div><div class="cbar" style="height:80%"></div>
+          <div class="cbar" style="height:70%"></div><div class="cbar" style="height:50%"></div>
         </div>
         <div class="mock-stats">
           <div class="mstat"><div class="ml">Balance</div><div class="mv">$12,480</div></div>
@@ -383,36 +379,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   <div class="sec-label">Platform Features</div>
   <h2 class="sec-title">Built for traders who demand more</h2>
   <div class="feat-grid">
-    <div class="feat-card">
-      <div class="feat-icon">💻</div>
-      <h3>Zuperior Web Terminal</h3>
-      <p>Built for modern traders to dominate the game with advanced charting and one-click execution.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🌍</div>
-      <h3>100+ Global Assets</h3>
-      <p>Trade Forex, Stocks, Commodities, and Indices from a single unified platform.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">💰</div>
-      <h3>Up to 40% Referral</h3>
-      <p>Refer friends and earn industry-leading commissions on every trade they make.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🏦</div>
-      <h3>Instant Withdrawals 24/7</h3>
-      <p>Your money, your control. Withdraw profits anytime with zero commission charged.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🔐</div>
-      <h3>Secure Wallets &amp; Transactions</h3>
-      <p>Advanced security keeps every transaction and wallet protected with bank-grade encryption.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">⚡</div>
-      <h3>Low Latency Engine</h3>
-      <p>Guaranteed no slippage with consistent pricing even in fast-moving volatile markets.</p>
-    </div>
+    <div class="feat-card"><div class="feat-icon">💻</div><h3>Zuperior Web Terminal</h3><p>Built for modern traders to dominate the game with advanced charting and one-click execution.</p></div>
+    <div class="feat-card"><div class="feat-icon">🌍</div><h3>100+ Global Assets</h3><p>Trade Forex, Stocks, Commodities, and Indices from a single unified platform.</p></div>
+    <div class="feat-card"><div class="feat-icon">💰</div><h3>Up to 40% Referral</h3><p>Refer friends and earn industry-leading commissions on every trade they make.</p></div>
+    <div class="feat-card"><div class="feat-icon">🏦</div><h3>Instant Withdrawals 24/7</h3><p>Your money, your control. Withdraw profits anytime with zero commission charged.</p></div>
+    <div class="feat-card"><div class="feat-icon">🔐</div><h3>Secure Wallets &amp; Transactions</h3><p>Advanced security keeps every transaction and wallet protected with bank-grade encryption.</p></div>
+    <div class="feat-card"><div class="feat-icon">⚡</div><h3>Low Latency Engine</h3><p>Guaranteed no slippage with consistent pricing even in fast-moving volatile markets.</p></div>
   </div>
 </section>
 
@@ -439,11 +411,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
       <h3>Losers' <span>Pool</span></h3>
       <p class="desc">Missed a move? Don't miss the journey.</p>
       <p class="desc">A portion of the company's monthly profit is set aside in the Losers' Pool to support and reward active traders.</p>
-      <div class="pool-box">
-        <p>Learn, stay disciplined, and keep moving forward. Active traders are rewarded for staying in the game, even through losses.</p>
-      </div>
-      <br/>
-      <a href="#" class="btn-gold">Open Account</a>
+      <div class="pool-box"><p>Learn, stay disciplined, and keep moving forward. Active traders are rewarded for staying in the game, even through losses.</p></div>
+      <br/><a href="#" class="btn-gold">Open Account</a>
     </div>
   </div>
 </section>
@@ -454,24 +423,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   <h2 class="sec-title">Don't Just Imagine, Enter the Zuperior Orbit</h2>
   <p class="sec-sub">Redefining trading through the perfect blend of insight and stability</p>
   <div class="why-grid">
-    <div class="why-card">
-      <div class="why-star">★</div>
-      <h3>Lowest Spreads</h3>
-      <p>Trade more, spend less. Starting from 0.8 pips with zero commission on every account type.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-star">★</div>
-      <h3>Guaranteed No Slippage</h3>
-      <p>Consistent pricing even in fast-moving markets. What you see is exactly what you get, every time.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-star">★</div>
-      <h3>AI-Integrated Tools</h3>
-      <p>Smart technology that strengthens every decision with real-time signals and technical analysis.</p>
-    </div>
+    <div class="why-card"><div class="why-star">★</div><h3>Lowest Spreads</h3><p>Trade more, spend less. Starting from 0.8 pips with zero commission on every account type.</p></div>
+    <div class="why-card"><div class="why-star">★</div><h3>Guaranteed No Slippage</h3><p>Consistent pricing even in fast-moving markets. What you see is exactly what you get, every time.</p></div>
+    <div class="why-card"><div class="why-star">★</div><h3>AI-Integrated Tools</h3><p>Smart technology that strengthens every decision with real-time signals and technical analysis.</p></div>
   </div>
-  <br/><br/>
-  <a href="#" class="btn-gold">Why Zuperior</a>
+  <br/><br/><a href="#" class="btn-gold">Why Zuperior</a>
 </section>
 
 <!-- TRADERS STAY AHEAD -->
@@ -489,8 +445,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
     <div class="chip">Low Latency Engine</div>
     <div class="chip">High Leverage 1:2000</div>
   </div>
-  <br/><br/>
-  <a href="#" class="btn-gold">Trade Now</a>
+  <br/><br/><a href="#" class="btn-gold">Trade Now</a>
 </section>
 
 <!-- TOOLS -->
@@ -499,30 +454,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   <h2 class="sec-title">Power your trading game with Zuper Tools</h2>
   <p class="sec-sub">Your complete toolkit for confident, data-driven trading</p>
   <div class="tools-grid">
-    <a href="#" class="tool-card">
-      <div class="tool-icon">🧮</div>
-      <h3>Trading Calculator</h3>
-      <p>Estimate position sizes, pip values, and profit/loss instantly before entering any trade.</p>
-      <div class="tool-link">Open Calculator →</div>
-    </a>
-    <a href="#" class="tool-card">
-      <div class="tool-icon">⚖️</div>
-      <h3>Risk Management Calculator</h3>
-      <p>Define safe trade parameters based on account equity and personal risk tolerance.</p>
-      <div class="tool-link">Manage Risk →</div>
-    </a>
-    <a href="#" class="tool-card">
-      <div class="tool-icon">🤖</div>
-      <h3>AI Technical Analysis</h3>
-      <p>Get automated chart insights and AI-generated strategy signals for any market.</p>
-      <div class="tool-link">Analyse Now →</div>
-    </a>
-    <a href="#" class="tool-card">
-      <div class="tool-icon">📰</div>
-      <h3>Market News &amp; Updates</h3>
-      <p>Read curated, real-time updates from financial data providers around the world.</p>
-      <div class="tool-link">Read News →</div>
-    </a>
+    <a href="#" class="tool-card"><div class="tool-icon">🧮</div><h3>Trading Calculator</h3><p>Estimate position sizes, pip values, and profit/loss instantly before entering any trade.</p><div class="tool-link">Open Calculator →</div></a>
+    <a href="#" class="tool-card"><div class="tool-icon">⚖️</div><h3>Risk Management Calculator</h3><p>Define safe trade parameters based on account equity and personal risk tolerance.</p><div class="tool-link">Manage Risk →</div></a>
+    <a href="#" class="tool-card"><div class="tool-icon">🤖</div><h3>AI Technical Analysis</h3><p>Get automated chart insights and AI-generated strategy signals for any market.</p><div class="tool-link">Analyse Now →</div></a>
+    <a href="#" class="tool-card"><div class="tool-icon">📰</div><h3>Market News &amp; Updates</h3><p>Read curated, real-time updates from financial data providers around the world.</p><div class="tool-link">Read News →</div></a>
   </div>
 </section>
 
@@ -544,24 +479,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   <div class="sec-label">Get Started</div>
   <h2 class="sec-title">3 simple steps to start your first trade</h2>
   <div class="steps-row">
-    <div class="step-card">
-      <div class="step-num">01</div>
-      <h3>Register your Account</h3>
-      <p>Start your trading journey in minutes. Sign up securely and get verified fast.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">02</div>
-      <h3>Deposit your Funds</h3>
-      <p>Fund your account securely from just $10. Multiple payment methods supported.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">03</div>
-      <h3>Trade Assets &amp; Win Big</h3>
-      <p>Access 100+ global markets. Use our tools and free education to gain the edge.</p>
-    </div>
+    <div class="step-card"><div class="step-num">01</div><h3>Register your Account</h3><p>Start your trading journey in minutes. Sign up securely and get verified fast.</p></div>
+    <div class="step-card"><div class="step-num">02</div><h3>Deposit your Funds</h3><p>Fund your account securely from just $10. Multiple payment methods supported.</p></div>
+    <div class="step-card"><div class="step-num">03</div><h3>Trade Assets &amp; Win Big</h3><p>Access 100+ global markets. Use our tools and free education to gain the edge.</p></div>
   </div>
-  <br/><br/>
-  <a href="#" class="btn-gold">Create Account</a>
+  <br/><br/><a href="#" class="btn-gold">Create Account</a>
 </section>
 
 <!-- VAULT OF MARKETS -->
@@ -571,10 +493,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   <h2 class="sec-title">The Zuperior Vault of Markets</h2>
   <p class="sec-sub" style="max-width:480px;margin:.75rem auto 0">Secure, diversified, and designed for traders who value trust as much as profit</p>
   <div class="market-cats">
-    <div class="mcat">Forex</div>
-    <div class="mcat">Indices</div>
-    <div class="mcat">Stocks</div>
-    <div class="mcat">Commodities</div>
+    <div class="mcat">Forex</div><div class="mcat">Indices</div>
+    <div class="mcat">Stocks</div><div class="mcat">Commodities</div>
   </div>
   <div class="ticker-row">
     <div class="tick"><span class="sym">EUR/USD</span><span class="pr">1.0873</span><span class="ch up">+0.12%</span></div>
@@ -592,14 +512,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   <h2>One App.<br/><span>Total Control.</span></h2>
   <p>Trade on the go. Every feature, wherever you are.</p>
   <div class="app-badges">
-    <a href="#" class="abadge">
-      <span class="abi">🍎</span>
-      <div><div class="abl">Download on the</div><div>App Store</div></div>
-    </a>
-    <a href="#" class="abadge">
-      <span class="abi">▶</span>
-      <div><div class="abl">Coming soon on</div><div>Google Play</div></div>
-    </a>
+    <a href="#" class="abadge"><span class="abi">🍎</span><div><div class="abl">Download on the</div><div>App Store</div></div></a>
+    <a href="#" class="abadge"><span class="abi">▶</span><div><div class="abl">Coming soon on</div><div>Google Play</div></div></a>
   </div>
 </section>
 
@@ -649,32 +563,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
       <a class="flogo" href="#">Zuperior<span>.</span></a>
       <p>Fueling the next generation of traders by building wealth through innovation, education, and intelligence.</p>
     </div>
-    <div class="foot-col">
-      <h4>Accounts</h4>
-      <ul>
-        <li><a href="#">Real Trading</a></li>
-        <li><a href="#">Demo Trading</a></li>
-        <li><a href="#">Why Zuperior</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <h4>Platforms</h4>
-      <ul>
-        <li><a href="#">Zuperior Dashboard</a></li>
-        <li><a href="#">Web Terminal</a></li>
-        <li><a href="#">Mobile App</a></li>
-        <li><a href="#">MetaTrader5</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <h4>Markets</h4>
-      <ul>
-        <li><a href="#">Forex</a></li>
-        <li><a href="#">Indices</a></li>
-        <li><a href="#">Stocks</a></li>
-        <li><a href="#">Commodities</a></li>
-      </ul>
-    </div>
+    <div class="foot-col"><h4>Accounts</h4><ul><li><a href="#">Real Trading</a></li><li><a href="#">Demo Trading</a></li><li><a href="#">Why Zuperior</a></li></ul></div>
+    <div class="foot-col"><h4>Platforms</h4><ul><li><a href="#">Zuperior Dashboard</a></li><li><a href="#">Web Terminal</a></li><li><a href="#">Mobile App</a></li><li><a href="#">MetaTrader5</a></li></ul></div>
+    <div class="foot-col"><h4>Markets</h4><ul><li><a href="#">Forex</a></li><li><a href="#">Indices</a></li><li><a href="#">Stocks</a></li><li><a href="#">Commodities</a></li></ul></div>
     <div class="foot-col">
       <h4>Contact Us</h4>
       <div class="foot-contact">
@@ -723,7 +614,7 @@ document.querySelectorAll('.feat-card,.why-card,.tool-card,.step-card,.behav-car
 });
 </script>
 
-<!-- ✅ Tawk.to Live Agent Widget — SINGLE CORRECT PROPERTY -->
+<!-- ✅ Tawk.to Live Agent — Single Correct Property -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
