@@ -405,7 +405,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
     </div>
     <div class="feat-card">
       <div class="feat-icon">🔐</div>
-      <h3>Secure Wallets & Transactions</h3>
+      <h3>Secure Wallets &amp; Transactions</h3>
       <p>Advanced security keeps every transaction and wallet protected with bank-grade encryption.</p>
     </div>
     <div class="feat-card">
@@ -519,7 +519,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
     </a>
     <a href="#" class="tool-card">
       <div class="tool-icon">📰</div>
-      <h3>Market News & Updates</h3>
+      <h3>Market News &amp; Updates</h3>
       <p>Read curated, real-time updates from financial data providers around the world.</p>
       <div class="tool-link">Read News →</div>
     </a>
@@ -711,7 +711,6 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
   if(!open)item.classList.add('open');
 }
-// Scroll animations
 var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){
     if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}
@@ -724,21 +723,7 @@ document.querySelectorAll('.feat-card,.why-card,.tool-card,.step-card,.behav-car
 });
 </script>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69d527bbb137951c36800040/1jlka6e48';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
-<!--Start of Tawk.to Script-->
+<!-- ✅ Tawk.to Live Agent Widget — SINGLE CORRECT PROPERTY -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -750,69 +735,10 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
 
-<!--Zuperior Bot Script-->
-<script>
-var sessionId = Math.random().toString(36).substring(7);
-var botReplying = false;
-var greeted = false;
-
-window.addEventListener('load', function() {
-  Tawk_API = Tawk_API || {};
-
-  Tawk_API.onChatStarted = async function() {
-    if (greeted) return;
-    greeted = true;
-    setTimeout(async function() {
-      try {
-        const r = await fetch(
-          'https://zuperior-bot.onrender.com/chat',
-          {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              message: '__GREET__',
-              sessionId: sessionId
-            })
-          }
-        );
-        const d = await r.json();
-        Tawk_API.sendMessage({message: d.reply});
-      } catch(e) {
-        console.log('Greeting error:', e);
-      }
-    }, 1000);
-  };
-
-  Tawk_API.onChatMessageVisitor = async function(msg) {
-    if (botReplying) return;
-    botReplying = true;
-    try {
-      const r = await fetch(
-        'https://zuperior-bot.onrender.com/chat',
-        {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            message: msg.message,
-            sessionId: sessionId
-          })
-        }
-      );
-      const d = await r.json();
-      Tawk_API.sendMessage({message: d.reply});
-    } catch(e) {
-      console.log('Message error:', e);
-      Tawk_API.sendMessage({
-        message: "Sorry! Please email support@zuperior.com"
-      });
-    }
-    setTimeout(function() { botReplying = false; }, 2000);
-  };
-});
-</script>
-<!--End of Zuperior Bot Script-->
+<!-- ✅ Botpress AI Chatbot -->
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/05/18/06/20260518060442-3ISWNB7E.json" defer></script>
 
 </body>
 </html>
