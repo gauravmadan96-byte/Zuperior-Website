@@ -4,6 +4,11 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Zuperior — Think Superior. Trade Zuperior.</title>
+<!-- Freshworks Tracking Code -->
+<script
+  src='//in.fw-cdn.com/32769301/1573406.js'
+  chat='true'>
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
@@ -566,6 +571,32 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
 <!-- ═══════════════════════════════════
      FRESHWORKS CHAT WIDGET
 ═══════════════════════════════════ -->
+<script>
+function fw_chat_widget() {
+  var options = {
+    config: {
+      cssNames: {
+        widget: 'custom_fc_frame',
+        expanded: 'custom_fc_expanded'
+      }
+    }
+  };
+
+  window.fcWidget.init(options);
+
+  // Set unique user id in your system when it is available
+  window.fcWidget.setExternalId("john.doe1987");
+  // Set user name
+  window.fcWidget.user.setFirstName("John");
+  // Set user email
+  window.fcWidget.user.setEmail("john.doe@gmail.com");
+  // Set user properties
+  window.fcWidget.user.setProperties({
+    cf_plan: "Pro",       // meta property 1
+    cf_status: "Active"   // meta property 2
+  });
+}
+</script>
 <script
   src='//in.fw-cdn.com/32769301/1573406.js'
   chat='true'>
