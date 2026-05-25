@@ -14,15 +14,6 @@
   --gray:#8a8a9a;--gray2:#3a3a48;--border:#1e1e28;
 }
 html{scroll-behavior:smooth}
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zuperior</title>
-</head>
-</body>
-</html>
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1.6}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg)}
@@ -181,9 +172,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
 .foot-copy{font-size:.72rem;color:#35354a}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
-/* ═══════════════════════════════════
-   RESPONSIVE — TABLET (960px)
-═══════════════════════════════════ */
 @media(max-width:960px){
   .nav-links{display:none;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(8,8,10,.97);padding:1.5rem 5vw;gap:1.1rem;border-bottom:1px solid var(--border)}
   .nav-links.open{display:flex}
@@ -197,9 +185,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   .foot-top{grid-template-columns:1fr 1fr}
 }
 
-/* ═══════════════════════════════════
-   RESPONSIVE — MOBILE (768px)
-═══════════════════════════════════ */
 @media(max-width:768px){
   .sec,.sec-alt{padding:4rem 5vw}
   .vault-section{padding:4rem 5vw}
@@ -221,25 +206,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   .behav-card{padding:1.75rem 1.5rem}
   .ticker-row{gap:.5rem}
   .tick{padding:.5rem .9rem}
-  /* Botpress — position higher on mobile */
-  #bp-web-widget-container{
-    bottom:75px!important;
-    right:14px!important;
-  }
-  /* When Botpress chat is open — full screen on mobile */
-  #bp-web-widget-container iframe[style*="height"]{
-    height:85vh!important;
-    width:100vw!important;
-    max-width:100vw!important;
-    right:0!important;
-    bottom:0!important;
-    border-radius:16px 16px 0 0!important;
-  }
 }
 
-/* ═══════════════════════════════════
-   RESPONSIVE — SMALL MOBILE (480px)
-═══════════════════════════════════ */
 @media(max-width:480px){
   nav{height:60px;padding:0 4vw}
   .nav-logo{font-size:1.1rem}
@@ -267,11 +235,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   .faq-q{font-size:.83rem;padding:1rem 1rem}
   .faq-a{padding:0 1rem;font-size:.8rem}
   .faq-item.open .faq-a{padding:0 1rem 1rem}
-  footer{padding:3rem 5vw 6rem}
+  footer{padding:3rem 5vw 90px}
   .foot-bottom>div{flex-direction:column;align-items:flex-start;gap:.75rem}
   .foot-links-row{gap:.75rem}
-  /* Extra bottom padding for chat widgets on mobile */
-  footer{padding-bottom:90px}
 }
 </style>
 </head>
@@ -597,6 +563,14 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 5vw 
   </div>
 </footer>
 
+<!-- ═══════════════════════════════════
+     FRESHWORKS CHAT WIDGET
+═══════════════════════════════════ -->
+<script
+  src='//in.fw-cdn.com/32769301/1573406.js'
+  chat='true'>
+</script>
+
 <script>
 function toggleFaq(btn){
   var item=btn.closest('.faq-item');
@@ -614,6 +588,7 @@ document.querySelectorAll('.feat-card,.why-card,.tool-card,.step-card,.behav-car
   el.style.transition='opacity .5s ease,transform .5s ease';
   obs.observe(el);
 });
+</script>
 
 </body>
 </html>
