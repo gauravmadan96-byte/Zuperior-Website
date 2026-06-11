@@ -1,0 +1,129 @@
+{
+  "theme": "LIGHT",
+  "archetype": "Organic & Earthy / Old Money Tech Fusion",
+  "design_philosophy": {
+    "core_concept": "The aesthetic is designed for an RBI audit-ready NBFC in India. It must convey high-end institutional trust, stability, and approachability without relying on the generic blue-and-white 'fintech' tropes. We are using an editorial 'Old Money Tech' approach for policy pages (heavy serif typography, structured margins) combined with 'Organic & Earthy' modern minimalism for marketing pages.",
+    "placeholders": "All placeholders MUST be explicitly 'xxxxxxxx'. Do not use realistic placeholder text like 'John Doe'. The design treats these gracefully: wrap 'xxxxxxxx' in a subtle inline style (e.g., `font-mono text-muted-foreground bg-muted/50 px-1 rounded-sm`) so they read as intentional variables awaiting user input."
+  },
+  "colors": {
+    "background": {
+      "default": "#F9F8F6",
+      "description": "Bone White / Warm Sand. Never use pure white (#FFFFFF) for the main app background to prevent eye strain on long reading pages."
+    },
+    "surface": {
+      "default": "#FFFFFF",
+      "muted": "#F3F1EC",
+      "description": "Crisp white for cards and policy text containers to create contrast with the background."
+    },
+    "primary": {
+      "default": "#1A2421",
+      "hover": "#2A3632",
+      "description": "Deep Forest / Charcoal Green. Used for text, major headings, and primary buttons. Conveys stability, wealth, and authority."
+    },
+    "accent": {
+      "default": "#B85C38",
+      "hover": "#A04F30",
+      "description": "Warm Terracotta / Clay. Used sparingly for hover states, key trust indicators (like RBI badges), and active navigation links."
+    },
+    "text": {
+      "primary": "#1A2421",
+      "muted": "#64746C",
+      "description": "Primary text uses the Deep Forest hue. Muted text uses a lighter sage-grey to maintain the earthy aesthetic."
+    },
+    "border": {
+      "default": "#E5E3DB",
+      "strong": "#1A2421"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Cormorant Garamond",
+      "body": "Manrope",
+      "mono": "JetBrains Mono"
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter leading-none",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight",
+      "h3": "text-xl sm:text-2xl tracking-tight",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm leading-relaxed",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em]"
+    },
+    "rules": {
+      "headings": "Headings MUST use Cormorant Garamond. Use font-light or font-medium to let the serif character shine. DO NOT default to bold.",
+      "body": "Body text MUST use Manrope for maximum legibility, especially on data-heavy loan tables and policy pages.",
+      "placeholders": "Any 'xxxxxxxx' placeholder must use JetBrains Mono or Tailwind's default mono to distinctly highlight it as a variable."
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing. Use p-8, p-12, p-24 for section paddings.",
+    "grid_patterns": {
+      "marketing": "Use asymmetrical bento layouts for 'Loan Products' and 'About' sections.",
+      "editorial_policy": "For regulatory pages (Fair Practices, KYC, Privacy, etc.), use a 2-column layout: a sticky sidebar (w-64) for the Table of Contents, and a wide, left-aligned content area (max-w-3xl) for the text. Use `prose prose-lg prose-headings:font-serif prose-stone` to format the long-form text beautifully."
+    },
+    "borders": "Expose the grid. Use 1px subtle borders (`border-[#E5E3DB]`) to separate sections and cards instead of shadows."
+  },
+  "components": {
+    "buttons": {
+      "primary": "Solid background (`bg-[#1A2421]`), crisp white text, sharp corners (`rounded-none` or max `rounded-sm`).",
+      "secondary": "Outline button with 1px border of primary color, text in primary color."
+    },
+    "cards": {
+      "style": "Flat, 1px border (`border-[#E5E3DB]`), sharp or max 4px radius (`rounded-sm`). No heavy shadows. On hover, apply a subtle `-translate-y-1` and `shadow-sm`."
+    },
+    "badges": {
+      "style": "Used for 'RBI Registered', 'CIN: xxxxxxxx'. Light terracotta background (`bg-[#B85C38]/10`), terracotta text (`text-[#B85C38]`), small uppercase font."
+    },
+    "how_it_works_steps": {
+      "style": "Use 'The Tracing Beam' or 'Grid Borders' concept. A vertical timeline with a 1px solid line connecting nodes, styled minimally."
+    },
+    "navigation": {
+      "style": "Solid background (`bg-[#F9F8F6]`), sticky top. Sub-menus (if any) should be flat, border-lined dropdowns."
+    }
+  },
+  "motion": {
+    "philosophy": "Subtle and sophisticated. Avoid bouncy animations.",
+    "rules": [
+      "Hover states must instantly change colors but smoothly transition transforms (0.2s ease).",
+      "Use staggered fade-ins for the 7-step 'How It Works' list.",
+      "Use `react-fast-marquee` for a slow, elegant 'Editorial Ribbon' of trust signals or partners if needed."
+    ]
+  },
+  "media": {
+    "rules": "All placeholders are 'xxxxxxxx'. Never use generic stock icons if you can use minimal typography or abstract imagery. Only use the media URLs provided below.",
+    "image_urls": [
+      {
+        "category": "hero",
+        "description": "Wide-angle modern glass office building interior, minimal, premium corporate finance feel.",
+        "url": "https://static.prod-images.emergentagent.com/jobs/6dc6f6ad-591a-49d3-bbd1-f3910b642e2e/images/318c8759b80541b7c2973698ba2aabfdbd4dd90edd4f82a9ec55a2e84ac59d3d.png"
+      },
+      {
+        "category": "abstract_trust",
+        "description": "Macro photography of stacked smooth river stones in perfect balance, earthy tones.",
+        "url": "https://static.prod-images.emergentagent.com/jobs/6dc6f6ad-591a-49d3-bbd1-f3910b642e2e/images/ad2825225d641c440e278ece62c854e8d54a236b0d9ad95fbbdffeed1dbf8b59.png"
+      },
+      {
+        "category": "about_leadership",
+        "description": "Abstract architectural visualization of interlocking arches, elegant and modern.",
+        "url": "https://static.prod-images.emergentagent.com/jobs/6dc6f6ad-591a-49d3-bbd1-f3910b642e2e/images/e08b24ae7987cb29c81e2b675f88a1bb2ea9ada17820bc1fe264f0fc7d62fcd3.png"
+      },
+      {
+        "category": "team_founder_placeholder",
+        "description": "Minimalist portrait of an Indian business owner.",
+        "url": "https://images.unsplash.com/photo-1767127181402-461c7d244f7d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBpbmRpYW4lMjBidXNpbmVzcyUyMG93bmVyJTIwbWluaW1hbGlzdHxlbnwwfHx8fDE3NzkwMTIzNTl8MA&ixlib=rb-4.1.0&q=85"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build the website as a static marketing/corporate site.",
+    "Install and configure fonts: Cormorant Garamond (Heading), Manrope (Body).",
+    "Install and configure Lucide React for icons.",
+    "For the 'How It Works' 7-step process, build a clear vertical connected-node layout.",
+    "For the 10 policy/regulatory pages, create a shared Editorial Layout Component that takes a `title` and `children`, featuring a sticky Table of Contents sidebar.",
+    "For every piece of text marked as 'xxxxxxxx' in the brief, wrap it in `<span className=\"font-mono text-muted-foreground bg-muted px-1 rounded-sm\">xxxxxxxx</span>`.",
+    "For tables (Rates, Fees & Charges), use Shadcn Table components styled without rounded corners to fit the sharp aesthetic.",
+    "Ensure all interactive elements have `data-testid` attributes.",
+    "Prioritize HTML semantics and accessibility (WCAG AA).",
+    "DO NOT use generic blue colors. Stick strictly to the Bone/Forest/Terracotta palette provided."
+  ]
+}
